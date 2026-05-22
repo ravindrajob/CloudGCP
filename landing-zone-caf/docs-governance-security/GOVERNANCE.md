@@ -3,7 +3,8 @@
 # Description : Guide des politiques d'organisation et justifications CAF
 # Auteur: Ravindra JOB
 # Source: https://github.com/ravindrajob/
-# Update: 26/11/2025 [v1.0 | RJ]
+# Update: 12/09/2025 [v1.0 | RJ] Initial creation
+# Update: 20/11/2025 [v1.1 | RJ] Adding WIF & SA Key restrictions
 ################################################################
 
 # Gouvernance de la Landing Zone

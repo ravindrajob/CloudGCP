@@ -3,7 +3,8 @@
 # Description : Guide de la topologie réseau moderne et sécurisée
 # Auteur: Ravindra JOB
 # Source: https://github.com/ravindrajob/
-# Update: 26/11/2025 [v1.0 | RJ]
+# Update: 15/09/2025 [v1.0 | RJ] Initial topology design
+# Update: 22/11/2025 [v1.1 | RJ] IAP Force & SWP Envoy integration
 ################################################################
 
 # Architecture Réseau : Modern Hub & Spoke

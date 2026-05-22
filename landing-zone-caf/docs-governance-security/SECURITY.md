@@ -3,7 +3,8 @@
 # Description : Guide de la stratégie Zéro Trust et protection L7
 # Auteur: Ravindra JOB
 # Source: https://github.com/ravindrajob/
-# Update: 26/11/2025 [v1.0 | RJ]
+# Update: 20/09/2025 [v1.0 | RJ] Security baseline creation
+# Update: 26/11/2025 [v1.1 | RJ] ZTNA Deny-all & Cloud Armor WAF logic
 ################################################################
 
 # Stratégie de Sécurité : Defense in Depth

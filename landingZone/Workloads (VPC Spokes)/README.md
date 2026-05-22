@@ -1,12 +1,28 @@
-# Couche 03 : Network Spokes (Workloads)
+# Ravindra JOB - Cloud Architect
+## Composant Landing Zone - Workloads (VPC Spokes)
+### Version: v1.2
 
-Cette couche implémente les réseaux isolés destinés à héberger les applications. En suivant les recommandations de la **CNCF**, chaque environnement (Prod, Dev) possède son propre VPC pour garantir une isolation totale au niveau 3.
+## Rôle du composant
+Provisionnement standardisé de réseaux VPC "Spoke" pour l'hébergement des applications, isolés par défaut et connectés au VPC Hub via le peering VPC ou Network Connectivity Center.
 
-## Bonnes Pratiques Appliquées
+## Hardening & Gouvernance
+- **Pas d'Adresses IP Publiques** : Utilisation exclusive de Cloud NAT pour le trafic sortant et interdiction des IPs publiques sur les instances via Organization Policy.
+- **VPC Flow Logs** : Activation systématique avec un taux d'échantillonnage ajusté pour une visibilité totale sur les flux réseau.
+- **Private Google Access** : Activation pour permettre aux instances sans IP publique de consommer les APIs et services Google Cloud.
+- **Accès via IAP** : Utilisation de Identity-Aware Proxy (IAP) pour l'accès administratif (SSH/RDP) sécurisé sans bastion.
+- **Standards** : Alignement avec les blueprints de segmentation du Google Cloud CAF et les architectures multi-tenant CNCF.
 
-### 🧩 Segmentation des Workloads (CAF)
-- **Isolation par Projet :** Chaque VPC Spoke vit dans son propre projet GCP. Cela permet une gestion fine des quotas et des permissions IAM (Source : *CAF Isolation Pillar*).
+## Schéma Mermaid
+```mermaid
+graph TD
+    subgraph Spoke_VPC
+        SubnetA[App Subnet]
+        SubnetB[DB Subnet]
+    end
+    Spoke_VPC <--> |VPC Peering| Hub[Hub VPC]
+    Spoke_VPC --> |Private Access| GoogleServices[Google APIs]
+    IAP[Identity-Aware Proxy] --> Spoke_VPC
+```
 
-### 🕸️ Connectivité par NCC (CNCF & Google)
-- **Decoupled Connectivity :** Contrairement au Peering VPC traditionnel qui crée un maillage rigide, l'usage des **NCC Spokes** permet d'attacher et de détacher des réseaux de manière fluide et dynamique. (Source : *CNCF Cloud Native Network principles*).
-- **Zéro Internet Direct :** Aucun de ces réseaux ne possède de passerelle Internet propre. Ils dépendent entièrement du Hub pour l'accès aux ressources externes, garantissant une inspection centralisée.
+## Conclusion
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

@@ -1,16 +1,25 @@
-# Couche 00 : Organization Policies (Hardening)
+# Ravindra JOB - Cloud Architect
+## Composant Landing Zone - Governance (Organization Policies)
+### Version: v1.2
 
-Cette couche constitue le "Garde-fou" racine de la Landing Zone. Elle applique des contraintes strictes au niveau du projet/organisation pour empêcher toute configuration non sécurisée, même accidentelle.
+## Rôle du composant
+Mise en œuvre des garde-fous globaux au niveau de l'organisation via les Organization Policies pour garantir une conformité et une sécurité immuables.
 
-## Bonnes Pratiques Appliquées
+## Hardening & Gouvernance
+- **Restrictions de Localisation** : Limitation du déploiement des ressources à des régions spécifiques autorisées.
+- **Interdiction des IPs Publiques** : Désactivation forcée de la création d'adresses IP externes sur toutes les instances.
+- **Contrôle de l'Usage des Services** : Restriction des APIs et services Google Cloud activables pour minimiser la surface d'attaque.
+- **Gestion des Clés IAM** : Interdiction de la création de clés JSON de compte de service pour forcer l'usage de Workload Identity.
+- **Standards** : Application stricte du pilier "Governance" du Google Cloud CAF et des benchmarks de conformité CIS.
 
-### 🛡️ Identité & IAM (CNCF & CAF)
-- **Workload Identity Federation (WIF) :** La création de clés de Service Account (JSON) est désactivée. Nous imposons l'authentification par jeton de courte durée. (Source : *CNCF Cloud Native Security Whitepaper*).
-- **Domaines Autorisés :** Seuls les membres de l'organisation `ravindra-job.com` peuvent être ajoutés aux projets. (Source : *CAF Identity Pillar*).
+## Schéma Mermaid
+```mermaid
+graph TD
+    Org[Organization] --> |Policy| DenyPublicIP[Deny External IP]
+    Org --> |Policy| ResourceLocation[Resource Location Restriction]
+    Org --> |Policy| TrustedImages[Trusted Images Only]
+    Folder[Folder/Project] --> |Inherits| Org
+```
 
-### 🌐 Réseau & Exposition (CAF)
-- **Zero Public IP :** Les instances ne peuvent pas avoir d'adresse IP externe. L'accès s'effectue via IAP ou VPN. (Source : *CAF Infrastructure Pillar*).
-- **No Default Network :** Désactivation de la création automatique du réseau `default`.
-
-### ⚡ Serverless (CNCF)
-- **Private Run Only :** Interdiction de déployer des services Cloud Run accessibles à `allUsers`.
+## Conclusion
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

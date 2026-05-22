@@ -1,12 +1,26 @@
-# Couche 02 : Network Hub (NCC)
+# Ravindra JOB - Cloud Architect
+## Composant Landing Zone - Connectivity (NCC Hub)
+### Version: v1.2
 
-Cette couche implémente le point central de connectivité de la Landing Zone. Nous utilisons le **Network Connectivity Center (NCC)** de Google, qui est la solution moderne pour interconnecter plusieurs VPCs et sites hybrides sans la complexité des peerings maillés.
+## Rôle du composant
+Utilisation du Network Connectivity Center (NCC) comme hub centralisé pour simplifier la connectivité hybride et inter-VPC à grande échelle sur Google Cloud.
 
-## Bonnes Pratiques Appliquées
+## Hardening & Gouvernance
+- **Hub-and-Spoke Moderne** : Centralisation du routage via le NCC Hub pour une visibilité et un contrôle accrus sur l'ensemble du réseau global.
+- **Spokes Redondants** : Configuration de spokes (VPC, VPN, Interconnect) hautement disponibles pour assurer une résilience maximale.
+- **Isolation des Flux** : Utilisation de politiques de routage pour contrôler strictement les échanges entre les différents spokes connectés au hub.
+- **Monitoring Centralisé** : Supervision de la topologie réseau et des performances de connectivité via le tableau de bord NCC.
+- **Standards** : Alignement avec les architectures réseau avancées du Google Cloud CAF.
 
-### 🚀 Routage Moderne (CNCF & Google NCC)
-- **NCC Hub :** Centralise la gestion des routes. Plutôt que de multiplier les peerings VPC (limités en nombre et complexes à gérer), le NCC permet d'agréger dynamiquement les **Spokes**. (Source : *Google Cloud Networking Reference Architecture*).
+## Schéma Mermaid
+```mermaid
+graph TD
+    NCC((NCC Hub))
+    NCC --- SpokeVPC1[VPC Spoke 1]
+    NCC --- SpokeVPC2[VPC Spoke 2]
+    NCC --- VPN[Hybrid VPN]
+    NCC --- IC[Cloud Interconnect]
+```
 
-### 🛡️ Sécurité du Flux (CAF)
-- **Centralized Egress :** Grâce au Cloud NAT déployé dans le Hub, nous pouvons contrôler et monitorer toute la sortie vers Internet de l'organisation. Les instances applicatives dans les Spokes n'ont aucun accès direct. (Source : *CAF Security Pillar*).
-- **VPC Host :** Le Hub VPC est configuré comme un **Shared VPC Host** pour déléguer l'usage du réseau aux projets applicatifs tout en gardant le contrôle de l'administration.
+## Conclusion
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

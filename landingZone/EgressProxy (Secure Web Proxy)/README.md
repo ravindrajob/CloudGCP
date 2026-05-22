@@ -1,14 +1,24 @@
-################################################################
-# Titre: EgressProxy (Secure Web Proxy) - README
-# Description : Pourquoi filtrer la sortie via Envoy
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 22/05/2026 [v1.0 | RJ]
-################################################################
-# EgressProxy (GCP Secure Web Proxy)
-💡 Rôle : Contrôler granulairement ce qui SORT du datacenter Cloud vers Internet.
-## Pourquoi Envoy ?
-Nous utilisons Envoy pour son inspection sémantique. Contrairement à une IP, un domaine (FQDN) est beaucoup plus fiable pour authentifier une destination de confiance (ex: github.com).
-## Hardening
-- Whitelist exhaustive : Tout ce qui n'est pas dans la liste est bloqué (Deny by default).
-- Proxy-only subnet : Isolation réseau des instances de filtrage.
+# Ravindra JOB - Cloud Architect
+## Composant Landing Zone - EgressProxy (Secure Web Proxy)
+### Version: v1.2
+
+## Rôle du composant
+Passerelle de sortie sécurisée (Secure Web Proxy) permettant de contrôler et d'inspecter le trafic web sortant des VPC vers Internet.
+
+## Hardening & Gouvernance
+- **Filtrage par URL/FQDN** : Restriction stricte de l'accès sortant à des destinations approuvées (Allow-list).
+- **Inspection HTTPS** : Interception du trafic chiffré pour l'inspection de contenu et la détection d'exfiltration de données.
+- **Identité de Source** : Politiques basées sur l'identité de l'appelant (Service Accounts) pour une granularité maximale.
+- **Logs d'Audit Détaillés** : Journalisation de toutes les requêtes web, incluant l'URL complète, le code de réponse et l'identité de l'utilisateur.
+- **Standards** : Conformité avec les architectures Zero Trust et les recommandations de sécurité périmétrique du CAF.
+
+## Schéma Mermaid
+```mermaid
+graph LR
+    Workload[Private Instance] --> |Egress| SWP[Secure Web Proxy]
+    SWP --> |Verify| Rules[URL Filtering / TLS Inspect]
+    Rules --> |Allowed| Internet((Internet))
+```
+
+## Conclusion
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

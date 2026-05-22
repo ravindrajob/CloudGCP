@@ -1,23 +1,24 @@
-################################################################
-# Titre: Connectivity (Cloud Interconnect) - README
-# Description : Pourquoi privatiser la liaison hybride sur GCP
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 22/05/2026 [v1.0 | RJ]
-################################################################
+# Ravindra JOB - Cloud Architect
+## Composant Landing Zone - Connectivity (Cloud Interconnect)
+### Version: v1.2
 
-# Connectivity (GCP Cloud Interconnect)
+## Rôle du composant
+Solution de connectivité dédiée et à haut débit entre l'infrastructure on-premises et Google Cloud, offrant une disponibilité de niveau entreprise.
 
-💡 **Rôle du composant :** 
-Fournir une extension privée et physique du datacenter On-Premise vers le réseau global de Google Cloud.
+## Hardening & Gouvernance
+- **VLAN Attachments Sécurisés** : Configuration de pièces jointes VLAN avec des capacités de bande passante dédiées et un routage BGP dynamique.
+- **Chiffrement HA VPN over Interconnect** : Déploiement systématique de tunnels VPN IPsec sur la connexion Interconnect pour garantir le chiffrement des données.
+- **Topologie Haute Disponibilité** : Architecture garantissant une disponibilité de 99.9% ou 99.99% via des circuits redondants sur plusieurs Edge Availability Domains.
+- **Monitoring & Alerts** : Surveillance des métriques de circuit et d'état BGP via Cloud Monitoring avec alertes en temps réel.
+- **Standards** : Conformité avec les architectures hybrides préconisées par le Google Cloud CAF.
 
-## Pourquoi ce choix technique ?
-**Cloud Interconnect** est la solution de référence pour les entreprises exigeant un SLA de disponibilité élevé et un débit constant. Elle permet d'étendre le réseau local dans le Cloud de manière transparente via le routage BGP.
+## Schéma Mermaid
+```mermaid
+graph LR
+    OnPrem[On-Premises DC] <--> |Direct/Partner Interconnect| GEdge[Google Edge Point]
+    GEdge <--> |VLAN Attachment| CloudRouter[Cloud Router]
+    CloudRouter <--> VPC[VPC Network]
+```
 
-## Hardening spécifique (vs Standard)
-- **Dedicated Interconnect :** Isolation physique totale du trafic par rapport aux autres clients Google.
-- **NCC Attachment :** L'interconnexion est rattachée au **Network Connectivity Center (NCC)**, ce qui permet au Hub central de propager dynamiquement les routes On-Premise vers tous les Spokes VPC.
-- **Private Service Connect :** Couplage avec PSC pour consommer les API Google (ex: Vertex AI) directement via la liaison Interconnect sans jamais sortir par une gateway Internet.
-
----
+## Conclusion
 Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

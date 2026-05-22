@@ -1,24 +1,28 @@
-################################################################
-# Titre: Kubernetes (GKE Private) - README
-# Description : Isolation totale des nœuds Kubernetes
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 22/05/2026 [v1.1 | RJ]
-################################################################
+# Ravindra JOB - Cloud Architect
+## Composant Landing Zone - Kubernetes (GKE Private)
+### Version: v1.2
 
-# Kubernetes (Google Kubernetes Engine)
+## Rôle du composant
+Déploiement de clusters Google Kubernetes Engine (GKE) entièrement privés, où les nœuds et le plan de contrôle n'ont pas d'adresses IP publiques.
 
-💡 **Rôle du composant :** 
-L'orchestration des charges de travail applicatives via un cluster managé de haute disponibilité.
+## Hardening & Gouvernance
+- **Private Nodes & Master** : Isolation complète du réseau via des plages d'adresses IP privées (RFC 1918) et accès à l'API via des réseaux autorisés.
+- **GKE Dataplane V2** : Utilisation du dataplane basé sur eBPF pour une sécurité et une visibilité réseau accrues.
+- **Binary Authorization** : Mise en œuvre d'une politique de signature d'images pour garantir que seuls les conteneurs approuvés sont déployés.
+- **Workload Identity** : Élimination de l'usage des clés JSON statiques pour les comptes de service Google en liant les identités K8s aux identités GCP.
+- **Standards** : Alignement avec le GKE Hardening Guide, le Google Cloud CAF et les standards de sécurité CNCF.
 
-## Pourquoi ce choix technique ?
-**GKE** est choisi pour son intégration native avec le réseau GCP (VPC-Native) et sa gestion avancée des mises à jour de sécurité.
+## Schéma Mermaid
+```mermaid
+graph TD
+    subgraph VPC_Network
+        GKE_Master[GKE Control Plane Private]
+        GKE_Nodes[Worker Nodes Private]
+    end
+    Admin[Admin / Cloud Build] --> |Authorized Networks| GKE_Master
+    GKE_Nodes --> |Workload Identity| GCP_Services[Google Cloud APIs]
+    GKE_Master --- BinAuth[Binary Authorization]
+```
 
-## Hardening spécifique (vs Standard)
-- **Private Nodes Only** : Contrairement au cluster par défaut qui expose ses nœuds sur Internet, nous imposons des **nœuds 100% privés**. La communication avec l'extérieur passe par le Cloud NAT du Hub.
-- **Master Authorized Networks** : L'accès à l'API Kubernetes est verrouillé sur des IPs administratives précises.
-- **Shielded Nodes** : Activation du démarrage sécurisé (Root-of-Trust matériel) pour empêcher le chargement de kernels malveillants sur les nœuds.
-- **WIF for GKE** : Utilisation du Workload Identity pour que les pods s'authentifient auprès des API Google sans utiliser de fichiers de clés.
-
----
+## Conclusion
 Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

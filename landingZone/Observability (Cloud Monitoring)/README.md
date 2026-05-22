@@ -1,39 +1,32 @@
-# Observability (Cloud Monitoring)
-> **Architecture :** Pourquoi déporter l'observabilité et auditer l'IA | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
----
+# Observability (Cloud Monitoring) > **Architecture :** Déport de l'observabilité et audit IA natif | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
 
+## Rôle du composant
+Le déport de l'observabilité est une pratique fondamentale du **SRE (Site Reliability Engineering)** visant à garantir que les signaux critiques (Golden Signals) sont collectés et stockés en dehors du périmètre de production immédiat. Cette approche permet d'éviter les **SPOF (Single Point of Failure)** : en cas de compromission ou de défaillance majeure de la Landing Zone, les traces d'audit et les métriques de performance restent accessibles et intègres dans le socle de sécurité centralisé.
 
-# Observability (GCP Cloud Monitoring)
+## Hardening & Gouvernance
+La configuration applique des contrôles de sécurité rigoureux conformes aux standards industriels :
+- **Audit DNS Deep Logging :** Capture exhaustive de toutes les résolutions DNS pour détecter les exfiltrations de données et les communications C2 (Command & Control).
+- **Audit IA A2A (Vertex AI) :** Surveillance active des interactions avec les modèles de fondation pour valider le respect du protocole **Action-to-Action**, garantissant l'intégrité des agents autonomes.
+- **VPC Flow Logs :** Journalisation granulaire des flux réseau pour l'audit de conformité et la détection d'anomalies de trafic.
+- **Log Sinks & Diagnostic Settings :** Exportation automatisée et sécurisée des logs d'audit vers des buckets immuables et le NOC Central via des puits de journaux (Log Sinks) hautement disponibles.
 
-💡 **Rôle du composant :** 
-Fournir une visibilité complète sur l'état de santé et la sécurité de la Landing Zone, avec une concentration particulière sur les flux d'IA et les requêtes DNS.
-
-## Pourquoi ce choix technique ?
-Conformément aux principes **SRE**, l'observabilité est déportée pour éviter les SPOF. Nous utilisons un **Log Analytics Workspace** natif pour traiter les gros volumes de données localement avant d'exporter les métriques critiques vers notre SOC central.
-
-## Hardening & Gouvernance (CAF & CNCF)
-- **AI Audit (A2A Compliance) :** Activation systématique de l'audit des requêtes Vertex AI. Indispensable pour valider que les agents respectent le protocole **Action-to-Action**.
-- **DNS Deep Logging :** Chaque résolution de nom est logguée pour détecter les comportements suspects (exfiltration via DNS).
-- **Log Immutability :** Les logs d'audit sont verrouillés dans un bucket spécifique avec une rétention imposable par politique.
-
+## Schéma Mermaid
 ```mermaid
 graph TD
     subgraph "Landing Zone (GCP)"
-        Services[GKE, AI, DNS, LB7]
-        Sink[Log Sink]
-        Analytics[Log Analytics]
+        Services[GKE Private, Vertex AI, Cloud DNS]
+        Sinks[Log Sinks / Export]
     end
     
-    subgraph "Central NOC (Déporté)"
-        OTel[OTel Collector]
-        LGTM[Grafana Stack]
+    subgraph "NOC Central (Observability-Monitoring)"
+        Collector[OTel Collector]
+        Storage[Log Analytics / Grafana]
     end
 
-    Services --> Sink
-    Sink --> Analytics
-    Analytics --> OTel
-    OTel --> LGTM
+    Services --> Sinks
+    Sinks --> Collector
+    Collector --> Storage
 ```
 
----
-*Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.*
+## Conclusion
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

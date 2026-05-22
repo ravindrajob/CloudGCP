@@ -20,6 +20,7 @@ L'infrastructure est découpée en modules indépendants, permettant une promoti
 | :--- | :--- | :--- |
 | **`Governance`** | Policies & IAM | WIF Only, interdiction des SA Keys, Domain Restriction. |
 | **`Connectivity`** | Network Hub | NCC (Network Connectivity Center), Cloud NAT centralisé. |
+| **`Connectivity`** | Hybrid Link | Cloud Interconnect (Dedicated), routage BGP, Private Service Connect. |
 | **`Firewall`** | Network Security | Politiques hiérarchiques, "Deny by Default" Ingress/Egress. |
 | **`Kubernetes`** | Orchestration | GKE Private Nodes, Shielded Instances, Master Authorized Networks. |
 | **`EgressProxy`** | L7 Inspection | Secure Web Proxy (Envoy), filtrage FQDN Whitelisting. |

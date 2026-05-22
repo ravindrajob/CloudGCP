@@ -15,6 +15,7 @@ L'infrastructure est modulaire et suit une logique de séparation des responsabi
 4.  **`lb7-global-external/`** : Exposition HTTPS sécurisée avec certificats managés et protection WAF via **Cloud Armor**.
 5.  **`vertex-ai-platform/`** : Provisionnement des ressources pour l'Intelligence Artificielle (Endpoints, Datasets) avec gestion fine de l'IAM.
 6.  **`ai-agent-security-a2a/`** : Architecture de gateway de sécurité (Proxy) pour les agents IA, implémentant le concept **Action-to-Action (A2A)**.
+7.  **`networking-firewall-hardened/`** : Implémentation d'une politique de pare-feu **Zéro Trust** globale avec un modèle "Deny by Default" (Ingress/Egress).
 
 ## 🔒 Sécurité par Design
 - **Zéro IP Publique** pour les bases de données.

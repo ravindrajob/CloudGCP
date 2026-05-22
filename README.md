@@ -1,28 +1,42 @@
-# CloudGCP - Lab de Simulation Google Cloud Platform
+################################################################
+# Titre: CloudGCP - README
+# Description : Lab de simulation Google Cloud Platform Hardened
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v2.2 | RJ]
+################################################################
 
-💡 **Philosophie & Partage :** 
-Ce dépôt est un laboratoire de démonstration pour les architectures **Google Cloud Platform**. Il reflète une approche standardisée et sécurisée de l'infrastructure "Cloud Native". 
+# Google Cloud Platform : Landing Zone Hardened
 
-Les configurations Terraform ici présentes sont des simulations conçues pour partager des bonnes pratiques sur le domaine **ravindra-job.com**. (OPSEC oblige, l' infrastructure réelle est isolée).
-
-## 🏗️ Architecture du Lab
-
-L'infrastructure est modulaire et suit une logique de séparation des responsabilités (**1 dossier = 1 composant**) :
-
-1.  **`networking-vpc/`** : Fondation réseau (VPC, Subnets) avec mise en place du *Private Service Access* et du *Serverless VPC Connector*.
-2.  **`cloud-sql-ha/`** : Instance PostgreSQL en Haute Disponibilité (HA), sans aucune IP publique, accessible uniquement via le réseau interne.
-3.  **`n8n-cloudrun-secure/`** : Orchestration N8N sur Cloud Run, connectée à la base SQL privée via le connecteur VPC.
-4.  **`lb7-global-external/`** : Exposition HTTPS sécurisée avec certificats managés et protection WAF via **Cloud Armor**.
-5.  **`vertex-ai-platform/`** : Provisionnement des ressources pour l'Intelligence Artificielle (Endpoints, Datasets) avec gestion fine de l'IAM.
-6.  **`ai-agent-security-a2a/`** : Architecture de gateway de sécurité (Proxy) pour les agents IA, implémentant le concept **Action-to-Action (A2A)**.
-7.  **`networking-firewall-hardened/`** : Implémentation d'une politique de pare-feu **Zéro Trust** globale avec un modèle "Deny by Default" (Ingress/Egress).
-8.  **`landing-zone-caf/05-secure-web-proxy/`** : Mise en œuvre du **Cloud Secure Web Proxy** (Envoy managé) pour l'inspection et le filtrage FQDN du trafic sortant.
-9.  **`landing-zone-caf/06-gke-cluster/`** : Déploiement d'un cluster GKE durci (Private Nodes, Master Authorized Networks) conforme aux standards CNCF.
-
-## 🔒 Sécurité par Design
-- **Zéro IP Publique** pour les bases de données.
-- **Accès Serverless sécurisé** via VPC Peering.
-- **WAF Cloud Armor** pour bloquer les injections SQL et les menaces L7.
-- **Principe du moindre privilège** appliqué aux Service Accounts IA.
+Ce dépôt centralise les briques d'infrastructure (IaC) nécessaires au déploiement d'une **Landing Zone** souveraine et sécurisée sur Google Cloud. L'architecture suit une approche standardisée, conforme aux piliers du **Cloud Adoption Framework (CAF)** et aux recommandations de la **CNCF**.
 
 ---
+
+### 🧱 Architecture du Lab
+
+L'infrastructure est découpée en modules indépendants, permettant une promotion granulaire des ressources.
+
+| Module | Fonctionnalité | Hardening Spécifique |
+| :--- | :--- | :--- |
+| **`Governance`** | Policies & IAM | WIF Only, interdiction des SA Keys, Domain Restriction. |
+| **`Connectivity`** | Network Hub | NCC (Network Connectivity Center), Cloud NAT centralisé. |
+| **`Firewall`** | Network Security | Politiques hiérarchiques, "Deny by Default" Ingress/Egress. |
+| **`Kubernetes`** | Orchestration | GKE Private Nodes, Shielded Instances, Master Authorized Networks. |
+| **`EgressProxy`** | L7 Inspection | Secure Web Proxy (Envoy), filtrage FQDN Whitelisting. |
+| **`LoadBalancer`** | App Exposition | Global LB7, certificats Google, WAF Cloud Armor. |
+| **`AI-Security`** | AI Agent Gateway | Proxy sémantique (A2A) pour le contrôle des interactions LLM. |
+
+---
+
+### 🛡️ Principes de Sécurité (Security by Design)
+
+- **Identité Zéro Trust :** Utilisation systématique du Workload Identity Federation (WIF). Zéro secret statique dans le code.
+- **Isolation Réseau :** Aucun composant (nœuds K8s, Bases de données) n'est exposé sur l'Internet public. L'administration s'effectue via IAP (Identity-Aware Proxy).
+- **Gouvernance Immuable :** Les Organization Policies verrouillent l'usage des ressources au niveau racine (No Public IP, No Public Buckets).
+
+### ⚙️ Déploiement & Orchestration
+
+L'orchestration est pilotée par un pipeline GitOps (GitHub Actions) situé dans `.github/workflows/`. Le déploiement s'effectue par couches successives pour garantir l'intégrité de l'état (State Integrity).
+
+---
+*Note : Ce dépôt est un environnement de simulation (Lab). Les configurations sont isolées et utilisent exclusivement le domaine `ravindra-job.com`.*

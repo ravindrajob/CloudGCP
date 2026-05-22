@@ -1,0 +1,63 @@
+################################################################
+# Titre: deploy-lz.yml
+# Description : Pipeline d'orchestration CI/CD pour la LZ GCP (WIF)
+# Auteur: Ravindra JOB
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
+
+name: "Deploy Landing Zone GCP"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'landing-zone-caf/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # Requis pour WIF
+
+jobs:
+  deploy-foundations:
+    name: "Layer 00: Org Policies"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Authenticate to GCP via WIF"
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_SA_EMAIL }}
+      - name: "Terraform Apply"
+        run: |
+          cd landing-zone-caf/00-org-policies
+          terraform init
+          terraform apply -auto-approve
+
+  deploy-hierarchy:
+    name: "Layer 01: Hierarchy"
+    needs: deploy-foundations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Terraform Apply"
+        run: |
+          cd landing-zone-caf/01-hierarchy
+          terraform init
+          terraform apply -auto-approve
+
+  deploy-network-hub:
+    name: "Layer 02: Network Hub"
+    needs: deploy-hierarchy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Terraform Apply"
+        run: |
+          cd landing-zone-caf/02-network-hub
+          terraform init
+          terraform apply -auto-approve
+
+  # Les autres couches (03, 04) suivent la même logique de dépendance (needs)

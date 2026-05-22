@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - EgressProxy (Secure Web Proxy)
-### Version: v1.2
+# EgressProxy (Secure Web Proxy)
+> **Architecture :** Passerelle de sortie sécurisée (Secure Web Proxy) permettant de contrôler et d'inspecter le trafic web sortant des VPC vers Internet. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Passerelle de sortie sécurisée (Secure Web Proxy) permettant de contrôler et d'inspecter le trafic web sortant des VPC vers Internet.
 
 ## Hardening & Gouvernance
 - **Filtrage par URL/FQDN** : Restriction stricte de l'accès sortant à des destinations approuvées (Allow-list).

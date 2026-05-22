@@ -1,10 +1,7 @@
-################################################################
-# Titre: Observability (Cloud Monitoring) - README
-# Description : Pourquoi déporter l'observabilité et auditer l'IA
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 22/05/2026 [v1.2 | RJ]
-################################################################
+# Observability (Cloud Monitoring)
+> **Architecture :** Pourquoi déporter l'observabilité et auditer l'IA | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
+
 
 # Observability (GCP Cloud Monitoring)
 

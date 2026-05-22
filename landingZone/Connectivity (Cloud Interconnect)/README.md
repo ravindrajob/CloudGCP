@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Connectivity (Cloud Interconnect)
-### Version: v1.2
+# Connectivity (Cloud Interconnect)
+> **Architecture :** Solution de connectivité dédiée et à haut débit entre l'infrastructure on-premises et Google Cloud, offrant une disponibilité de niveau entreprise. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Solution de connectivité dédiée et à haut débit entre l'infrastructure on-premises et Google Cloud, offrant une disponibilité de niveau entreprise.
 
 ## Hardening & Gouvernance
 - **VLAN Attachments Sécurisés** : Configuration de pièces jointes VLAN avec des capacités de bande passante dédiées et un routage BGP dynamique.

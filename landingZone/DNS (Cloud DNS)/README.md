@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - DNS (Cloud DNS)
-### Version: v1.2
+# DNS (Cloud DNS)
+> **Architecture :** Gestion de la résolution de noms de domaine hautement disponible et sécurisée au sein de Google Cloud, supportant les zones privées et les architectures hybrides. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Gestion de la résolution de noms de domaine hautement disponible et sécurisée au sein de Google Cloud, supportant les zones privées et les architectures hybrides.
 
 ## Hardening & Gouvernance
 - **Zones DNS Privées** : Création de zones visibles uniquement au sein des réseaux VPC sélectionnés pour éviter toute fuite d'informations réseau.

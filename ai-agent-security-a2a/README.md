@@ -1,10 +1,7 @@
-################################################################
-# Titre: AI Agent Security Gateway (A2A) - Documentation
-# Description : Documentation technique du module de sécurisation des agents IA
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 15/10/2025 [v1.0 | RJ]
-################################################################
+# AI Agent Security Gateway (A2A) - Documentation
+> **Architecture :** Documentation technique du module de sécurisation des agents IA | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
+
 
 # AI Agent Security Gateway (A2A)
 

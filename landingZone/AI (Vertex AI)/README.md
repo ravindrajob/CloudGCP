@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - AI (Vertex AI)
-### Version: v1.2
+# AI (Vertex AI)
+> **Architecture :** Plateforme unifiée de Machine Learning sur Google Cloud (Vertex AI), offrant des outils pour construire, déployer et mettre à l'échelle des modèles d'IA sécurisés. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Plateforme unifiée de Machine Learning sur Google Cloud (Vertex AI), offrant des outils pour construire, déployer et mettre à l'échelle des modèles d'IA sécurisés.
 
 ## Hardening & Gouvernance
 - **Vertex AI Workbench Sécurisé** : Déploiement de notebooks sans adresse IP publique et avec restriction de l'accès via Identity-Aware Proxy (IAP).

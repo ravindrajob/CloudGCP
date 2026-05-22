@@ -1,10 +1,7 @@
-################################################################
-# Titre: CloudGCP - README
-# Description : Lab de simulation Google Cloud Platform Hardened
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 22/05/2026 [v2.2 | RJ]
-################################################################
+# CloudGCP
+> **Architecture :** Lab de simulation Google Cloud Platform Hardened | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
+
 
 # Google Cloud Platform : Landing Zone Hardened
 

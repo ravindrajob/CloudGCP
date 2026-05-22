@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Kubernetes (GKE Private)
-### Version: v1.2
+# Kubernetes (GKE Private)
+> **Architecture :** Déploiement de clusters Google Kubernetes Engine (GKE) entièrement privés, où les nœuds et le plan de contrôle n'ont pas d'adresses IP publiques. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Déploiement de clusters Google Kubernetes Engine (GKE) entièrement privés, où les nœuds et le plan de contrôle n'ont pas d'adresses IP publiques.
 
 ## Hardening & Gouvernance
 - **Private Nodes & Master** : Isolation complète du réseau via des plages d'adresses IP privées (RFC 1918) et accès à l'API via des réseaux autorisés.

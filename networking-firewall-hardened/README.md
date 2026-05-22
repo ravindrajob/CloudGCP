@@ -1,10 +1,7 @@
-################################################################
-# Titre: GCP Hardened Firewall Policies - Documentation
-# Description : Guide sur l'implémentation Zéro Trust sur GCP
-# Auteur: Ravindra JOB
-# Source: https://github.com/ravindrajob/
-# Update: 24/11/2025 [v1.0 | RJ]
-################################################################
+# GCP Hardened Firewall Policies - Documentation
+> **Architecture :** Guide sur l'implémentation Zéro Trust sur GCP | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
+
 
 # Networking Firewall Hardened (Zéro Trust)
 

@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Governance (Organization Policies)
-### Version: v1.2
+# Governance (Organization Policies)
+> **Architecture :** Mise en œuvre des garde-fous globaux au niveau de l'organisation via les Organization Policies pour garantir une conformité et une sécurité immuables. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Mise en œuvre des garde-fous globaux au niveau de l'organisation via les Organization Policies pour garantir une conformité et une sécurité immuables.
 
 ## Hardening & Gouvernance
 - **Restrictions de Localisation** : Limitation du déploiement des ressources à des régions spécifiques autorisées.

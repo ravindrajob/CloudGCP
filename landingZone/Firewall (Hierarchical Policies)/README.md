@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Firewall (Hierarchical Policies)
-### Version: v1.2
+# Firewall (Hierarchical Policies)
+> **Architecture :** Mise en œuvre de règles de pare-feu au niveau des dossiers ou de l'organisation pour garantir une sécurité cohérente à travers tous les projets GCP. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Mise en œuvre de règles de pare-feu au niveau des dossiers ou de l'organisation pour garantir une sécurité cohérente à travers tous les projets GCP.
 
 ## Hardening & Gouvernance
 - **Règles Globales (Guardrails)** : Application de règles de sécurité immuables qui prévalent sur les règles de pare-feu définies localement dans les VPC.

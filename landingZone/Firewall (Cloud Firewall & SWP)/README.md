@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Firewall (Cloud Firewall & SWP)
-### Version: v1.2
+# Firewall (Cloud Firewall & SWP)
+> **Architecture :** Système de protection réseau multicouche combinant les règles de pare-feu Cloud Firewall et le Secure Web Proxy (SWP) pour une inspection granulaire du trafic. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Système de protection réseau multicouche combinant les règles de pare-feu Cloud Firewall et le Secure Web Proxy (SWP) pour une inspection granulaire du trafic.
 
 ## Hardening & Gouvernance
 - **Firewall Standard & Plus** : Utilisation des capacités avancées (FQDN filtering, intrusion prevention) pour une défense en profondeur.

@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Documentation (Architecture)
-### Version: v1.2
+# Documentation (Architecture)
+> **Architecture :** Centre de documentation centralisé hébergeant les spécifications techniques, les diagrammes de flux et les enregistrements de décisions d'architecture (ADR) pour Google Cloud. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Centre de documentation centralisé hébergeant les spécifications techniques, les diagrammes de flux et les enregistrements de décisions d'architecture (ADR) pour Google Cloud.
 
 ## Hardening & Gouvernance
 - **Versionnement Git** : Gestion de la documentation via Git pour assurer un historique complet et des processus de validation rigoureux.

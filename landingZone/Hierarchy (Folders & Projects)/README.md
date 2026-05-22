@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Hierarchy (Folders & Projects)
-### Version: v1.2
+# Hierarchy (Folders & Projects)
+> **Architecture :** Définition de la structure organisationnelle de Google Cloud via une hiérarchie de dossiers et de projets, permettant une gestion fine de l'héritage des politiques et de l'IAM. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Définition de la structure organisationnelle de Google Cloud via une hiérarchie de dossiers et de projets, permettant une gestion fine de l'héritage des politiques et de l'IAM.
 
 ## Hardening & Gouvernance
 - **Structure par Environnement** : Organisation des dossiers par type d'environnement (Prod, Dev, Shared Services) pour une isolation stricte.

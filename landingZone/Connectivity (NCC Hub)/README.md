@@ -1,9 +1,7 @@
-# Ravindra JOB - Cloud Architect
-## Composant Landing Zone - Connectivity (NCC Hub)
-### Version: v1.2
+# Connectivity (NCC Hub)
+> **Architecture :** Utilisation du Network Connectivity Center (NCC) comme hub centralisé pour simplifier la connectivité hybride et inter-VPC à grande échelle sur Google Cloud. | **Version :** v2.3 | **Maintainer :** [Ravindra JOB](https://github.com/ravindrajob/)
+---
 
-## Rôle du composant
-Utilisation du Network Connectivity Center (NCC) comme hub centralisé pour simplifier la connectivité hybride et inter-VPC à grande échelle sur Google Cloud.
 
 ## Hardening & Gouvernance
 - **Hub-and-Spoke Moderne** : Centralisation du routage via le NCC Hub pour une visibilité et un contrôle accrus sur l'ensemble du réseau global.

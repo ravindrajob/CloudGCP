@@ -20,4 +20,4 @@ Fournir une extension privée et physique du datacenter On-Premise vers le rése
 - **Private Service Connect :** Couplage avec PSC pour consommer les API Google (ex: Vertex AI) directement via la liaison Interconnect sans jamais sortir par une gateway Internet.
 
 ---
-*Architecture hybride validée par Ravindra JOB.*
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

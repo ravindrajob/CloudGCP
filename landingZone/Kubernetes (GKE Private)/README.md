@@ -21,4 +21,4 @@ L'orchestration des charges de travail applicatives via un cluster managé de ha
 - **WIF for GKE** : Utilisation du Workload Identity pour que les pods s'authentifient auprès des API Google sans utiliser de fichiers de clés.
 
 ---
-*Architecture CNCF sécurisée par Ravindra JOB.*
+Adoption industrialisée du CAF avec surcouche de sécurité et intégration des pratiques CNCF.

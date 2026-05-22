@@ -14,6 +14,7 @@ L'infrastructure est modulaire et suit une logique de séparation des responsabi
 3.  **`n8n-cloudrun-secure/`** : Orchestration N8N sur Cloud Run, connectée à la base SQL privée via le connecteur VPC.
 4.  **`lb7-global-external/`** : Exposition HTTPS sécurisée avec certificats managés et protection WAF via **Cloud Armor**.
 5.  **`vertex-ai-platform/`** : Provisionnement des ressources pour l'Intelligence Artificielle (Endpoints, Datasets) avec gestion fine de l'IAM.
+6.  **`ai-agent-security-a2a/`** : Architecture de gateway de sécurité (Proxy) pour les agents IA, implémentant le concept **Action-to-Action (A2A)**.
 
 ## 🔒 Sécurité par Design
 - **Zéro IP Publique** pour les bases de données.

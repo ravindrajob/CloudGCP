@@ -23,4 +23,3 @@ Dans un monde où les agents IA disposent d'une autonomie croissante, la sécuri
 3.  **IAM Policy** : Applique le principe du moindre privilège sur l'API Vertex AI.
 
 ---
-*Code conçu et partagé par Ravindra JOB pour évangéliser la sécurité des systèmes autonomes.*

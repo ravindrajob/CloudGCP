@@ -28,4 +28,3 @@ Nous appliquons le principe du **Zéro Trust Network Architecture (ZTNA)**.
 *En projet pour la v2.0* : Mise en œuvre de Binary Authorization pour garantir que seules les images Docker signées et vérifiées par la CI/CD peuvent être déployées dans le datacenter.
 
 ---
-*Vision sécuritaire intransigeante portée par Ravindra JOB.*

@@ -31,4 +31,3 @@ Dans cette Landing Zone, la création de clés de Service Account (fichiers JSON
 Tous les journaux d'audit (Admin Activity, Data Access) sont centralisés dans le projet `lab-gcp-logging` via un **Log Sink** au niveau de l'organisation pour garantir l'immutabilité et la traçabilité.
 
 ---
-*Gouvernance carrée et rigoureuse conçue par Ravindra JOB.*

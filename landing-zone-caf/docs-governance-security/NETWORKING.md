@@ -32,4 +32,3 @@ Conformément aux principes du **Zéro Trust**, cette architecture bannit l'usag
 Tout trafic sortant du datacenter cloud vers Internet est inspecté par un proxy explicite **Envoy-powered** (GCP Secure Web Proxy). Le filtrage se fait par nom de domaine (FQDN Whitelisting).
 
 ---
-*Architecture réseau experte validée par Ravindra JOB.*

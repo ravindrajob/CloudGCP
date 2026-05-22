@@ -27,4 +27,3 @@ Cette implémentation réseau suit le principe du **Zéro Trust**. Aucune confia
 3.  **VPC Association** : Application dynamique de la politique sur le réseau de démonstration.
 
 ---
-*Architecture conçue avec une rigueur paranoïaque par Ravindra JOB.*

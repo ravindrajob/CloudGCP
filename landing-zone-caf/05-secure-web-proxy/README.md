@@ -27,4 +27,3 @@ Pour transformer une Landing Zone en un véritable Datacenter Cloud, le filtrage
 3.  **Managed Gateway** : Le service Cloud SWP rattaché au VPC de transit.
 
 ---
-*Code d'infrastructure hautement sécurisé, conçu par Ravindra JOB.*

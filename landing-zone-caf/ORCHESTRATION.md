@@ -31,4 +31,3 @@ Le fichier de workflow est disponible dans `.github/workflows/deploy-lz.yml`.
 Il utilise des environnements GitHub (`production`, `security-audit`) avec des approbations manuelles pour les étapes critiques (Couche 00 et 04).
 
 ---
-*Orchestration SRE conçue pour la scalabilité par Ravindra JOB.*

@@ -1,9 +1,9 @@
 # CloudGCP - Lab de Simulation Google Cloud Platform
 
 💡 **Philosophie & Partage :** 
-Ce dépôt est un laboratoire de démonstration pour les architectures **Google Cloud Platform**. Il reflète mon approche méticuleuse et sécurisée de l'infrastructure "Cloud Native". 
+Ce dépôt est un laboratoire de démonstration pour les architectures **Google Cloud Platform**. Il reflète une approche standardisée et sécurisée de l'infrastructure "Cloud Native". 
 
-Les configurations Terraform ici présentes sont des simulations conçues pour partager des bonnes pratiques sur le domaine **ravindra-job.com**. (OPSEC oblige, mon infrastructure réelle est isolée).
+Les configurations Terraform ici présentes sont des simulations conçues pour partager des bonnes pratiques sur le domaine **ravindra-job.com**. (OPSEC oblige, l' infrastructure réelle est isolée).
 
 ## 🏗️ Architecture du Lab
 

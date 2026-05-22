@@ -1,3 +1,10 @@
+################################################################
+# Titre: GCP Resource Hierarchy (CAF Principles)
+# Description : Découpage logique des environnements via Folders et Projets
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : GCP Resource Hierarchy (CAF Principles)
 # Description : Découpage logique des environnements via Folders et Projets

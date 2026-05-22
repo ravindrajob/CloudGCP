@@ -1,3 +1,10 @@
+################################################################
+# Titre: Networking VPC & Private Service Access
+# Description : Base réseau pour le Lab de simulation (ravindra-job.com)
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Networking VPC & Private Service Access
 # Description : Base réseau pour le Lab de simulation (ravindra-job.com)

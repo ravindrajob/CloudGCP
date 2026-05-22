@@ -1,3 +1,10 @@
+################################################################
+# Titre: Vertex AI Platform Foundation
+# Description : Infrastructure IA Cloud Native (Simulation Lab)
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Vertex AI Platform Foundation
 # Description : Infrastructure IA Cloud Native (Simulation Lab)

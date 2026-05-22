@@ -1,3 +1,10 @@
+################################################################
+# Titre: Network Connectivity Center (NCC) & Hub VPC
+# Description : Hub central de transit pour la topologie Hub-and-Spoke
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Network Connectivity Center (NCC) & Hub VPC
 # Description : Hub central de transit pour la topologie Hub-and-Spoke

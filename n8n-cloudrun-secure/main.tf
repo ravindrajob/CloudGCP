@@ -1,3 +1,10 @@
+################################################################
+# Titre: N8N on Cloud Run (Secure Private DB Access)
+# Description : Déploiement Cloud Native de N8N pour le Lab
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : N8N on Cloud Run (Secure Private DB Access)
 # Description : Déploiement Cloud Native de N8N pour le Lab

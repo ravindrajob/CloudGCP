@@ -1,3 +1,10 @@
+################################################################
+# Titre: GCP Organization Policies (Hardened CNCF/CAF)
+# Description : Verrouillage des vecteurs d'attaque au niveau racine
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : GCP Organization Policies (Hardened CNCF/CAF)
 # Description : Verrouillage des vecteurs d'attaque au niveau racine

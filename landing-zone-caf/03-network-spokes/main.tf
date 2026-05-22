@@ -1,3 +1,10 @@
+################################################################
+# Titre: Network Spokes & NCC Attachments
+# Description : Réseaux applicatifs (Prod/Dev) isolés et rattachés au Hub
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Network Spokes & NCC Attachments
 # Description : Réseaux applicatifs (Prod/Dev) isolés et rattachés au Hub

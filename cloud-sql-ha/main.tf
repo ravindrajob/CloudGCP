@@ -1,3 +1,10 @@
+################################################################
+# Titre: Cloud SQL PostgreSQL HA (Private IP Only)
+# Description : Base de données sécurisée pour le Lab de simulation
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Cloud SQL PostgreSQL HA (Private IP Only)
 # Description : Base de données sécurisée pour le Lab de simulation

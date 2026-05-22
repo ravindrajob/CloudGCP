@@ -1,3 +1,10 @@
+################################################################
+# Titre: Global LB7 (HTTPS) & Cloud Armor WAF
+# Description : Exposition sécurisée du domaine ravindra-job.com sur GCP
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Global LB7 (HTTPS) & Cloud Armor WAF
 # Description : Exposition sécurisée du domaine ravindra-job.com sur GCP

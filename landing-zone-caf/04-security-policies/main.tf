@@ -1,3 +1,10 @@
+################################################################
+# Titre: Hierarchical Firewall Policies (Zéro Trust)
+# Description : Politiques de sécurité globales (Deny by Default)
+# Auteur: Ravindra JOB
+# Source: https://github.com/ravindrajob/
+# Update: 22/05/2026 [v1.0 | RJ]
+################################################################
 # ==============================================================================
 # Terraform : Hierarchical Firewall Policies (Zéro Trust)
 # Description : Politiques de sécurité globales (Deny by Default)

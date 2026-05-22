@@ -42,7 +42,7 @@ resource "google_project_organization_policy" "allowed_domains" {
 
   list_policy {
     allow {
-      values = ["principalSet://iam.googleapis.com/organizations/${var.org_id}"]
+      values = [var.org_id] # Format correct: ID numérique de l'organisation
     }
   }
 }
@@ -53,8 +53,10 @@ resource "google_project_organization_policy" "no_external_ips" {
   project    = var.project_id
   constraint = "compute.restrictExternalIp"
 
-  boolean_policy {
-    enforced = true
+  list_policy {
+    deny {
+      all = true
+    }
   }
 }
 
@@ -62,9 +64,11 @@ resource "google_project_organization_policy" "no_external_ips" {
 # Interdiction de l'invocation allUsers (non authentifiée).
 resource "google_project_organization_policy" "no_public_run" {
   project    = var.project_id
-  constraint = "run.allowedBinaryAuthorizationPolicies" # Placeholder pour illustrer le verrouillage CNCF
+  constraint = "run.allowedBinaryAuthorizationPolicies" 
 
-  boolean_policy {
-    enforced = true
+  list_policy {
+    deny {
+      all = true
+    }
   }
 }

@@ -22,6 +22,7 @@ L'infrastructure est découpée en modules indépendants, permettant une promoti
 | **`Kubernetes`** | Orchestration | GKE Private Nodes, Shielded Instances, Master Authorized Networks. |
 | **`EgressProxy`** | L7 Inspection | Secure Web Proxy (Envoy), filtrage FQDN Whitelisting. |
 | **`LoadBalancer`** | App Exposition | Global LB7, certificats Google, WAF Cloud Armor. |
+| **`ChaosEngineering`** | Fault Injection | Firewall Blackout (Priority 0) pour test de résilience régionale. |
 | **`AI-Security`** | AI Agent Gateway | Proxy sémantique (A2A) pour le contrôle des interactions LLM. |
 
 ---

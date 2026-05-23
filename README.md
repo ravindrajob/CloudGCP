@@ -23,6 +23,8 @@ L'infrastructure est découpée en modules indépendants, permettant une promoti
 | **`EgressProxy`** | L7 Inspection | Secure Web Proxy (Envoy), filtrage FQDN Whitelisting. |
 | **`LoadBalancer`** | App Exposition | Global LB7, certificats Google, WAF Cloud Armor. |
 | **`ChaosEngineering`** | Fault Injection | Firewall Blackout (Priority 0) pour test de résilience régionale. |
+| **`FinOps`** | Financial Management | Billing Export vers BigQuery et alertes budgétaires industrialisées. |
+| **`SecOps`** | SOC Operations | Security Command Center (SCC) et détection intelligente des menaces. |
 | **`AI-Security`** | AI Agent Gateway | Proxy sémantique (A2A) pour le contrôle des interactions LLM. |
 
 ---
